@@ -4,3 +4,12 @@
 @media(min-width:600px){.mode-nav,.search-box{display:flex}.mobile-search{display:none}.listing-grid{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:repeat(3,1fr)}.form-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr;align-items:center;min-height:590px}.hero-art{min-height:390px}.content-columns{grid-template-columns:.85fr 1.15fr}.provider-heading{margin-top:-35px}.auth-card{min-height:590px}.provider-body,.dashboard{padding:30px}.listing-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:699px){.nav-bar{min-height:62px}.brand>span:last-child,.mode-nav,.nav-actions .button.ghost:not(#login),.nav-actions .button.subtle span:not(#inboxCount){display:none}.nav-actions{gap:0}.nav-actions #inboxBtn{display:inline-flex;padding-inline:9px}.nav-actions #profileBtn{display:none}.hero{padding-top:38px}.hero-art{min-height:280px}.section-top{align-items:start;flex-direction:column}.provider-heading,.dashboard-head{align-items:start;flex-direction:column}.provider-actions{width:100%}.provider-actions .button{flex:1}.workspace-tabs{width:100%}.workspace-tab{flex:1;padding-inline:7px;font-size:.78rem}.auth-card{display:block;max-height:92dvh;overflow:auto}.auth-intro{padding:24px}.auth-intro h1{margin:25px 0 10px;font-size:2rem}.auth-form{padding:24px}.chat-layout{grid-template-columns:1fr;min-height:80dvh}.thread-pane{max-height:190px;border-right:0;border-bottom:1px solid var(--line)}.chat-pane{min-height:370px}.modal-card{padding:21px}.site-footer .shell{display:grid}.hero-actions .button{flex:1}.hero-actions{width:100%}}
+/* Hire requests are also visible in the shared inbox as ongoing work. */
+.inbox-section-label{margin:16px 0 8px;font-size:10px;font-weight:900;letter-spacing:.16em;color:var(--accent);text-transform:uppercase}
+.hire-inbox-card,.hire-card{margin:10px 0;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--surface-2)}
+.hire-inbox-top,.hire-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.hire-inbox-title{margin-top:7px;font-size:12px;font-weight:800;color:var(--text)}
+.hire-inbox-details,.hire-card p{margin-top:8px;font-size:12px;line-height:1.55;color:var(--muted)}
+.hire-inbox-actions,.hire-actions{display:flex;gap:8px;margin-top:11px}
+.hire-card .button{margin-top:11px}
+.empty-state{padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:13px}
