@@ -123,6 +123,47 @@ html[data-theme="dark"] .auth-intro{background:linear-gradient(155deg,#0d2d22,#0
 }
 @media(max-width:420px){.auth-copy h1{font-size:34px}.auth-intro{padding-top:16px}.auth-step span{font-size:10px}.auth-form-side{padding-left:16px;padding-right:16px}.notification-menu{position:fixed;left:10px;right:10px;top:68px;width:auto}}
 
+/* Keep the workspace comfortable and native-feeling on narrow touch screens. */
+@media(max-width:640px){
+  html{scroll-padding-top:66px}
+  body{min-width:320px;-webkit-tap-highlight-color:transparent}
+  .site-header{position:sticky;top:0;padding-top:env(safe-area-inset-top);z-index:70}
+  .site-header .mx-auto{min-height:58px}
+  .site-header .logo-cube{flex:0 0 40px}
+  .site-header .ml-auto{gap:5px}
+  .site-header #login,.site-header #signup{padding-left:10px;padding-right:10px}
+  .site-header #profileBtn{padding:5px}
+  .site-header #profileBtn span:last-child{display:none}
+  #feedPage>section:first-child{padding:8px 8px 0}
+  .hero-light{border-radius:24px!important;padding:54px 18px 42px!important}
+  .hero-light h1{font-size:clamp(2.25rem,11vw,3.6rem);letter-spacing:-.055em}
+  .hero-light p{font-size:14px;line-height:1.65}
+  .hero-light .mt-8{margin-top:24px}
+  .hero-light .hero-primary,.hero-light .hero-secondary{width:100%;padding:14px 16px}
+  #marketplace{padding:42px 14px}
+  #marketplace h2{font-size:1.8rem}
+  #grid{gap:12px}
+  .skill-card{padding:15px!important}
+  .skill-card h3{font-size:1.05rem}
+  .skill-card:hover{transform:none}
+  .product-section,.stats-section{padding-left:14px;padding-right:14px}
+  .section-head h2{font-size:1.8rem}
+  .provider-cover{height:120px!important}
+  #providerPage>div,#profilePage>div{padding:24px 14px}
+  #providerPage .relative.z-20{padding-left:16px;padding-right:16px}
+  #providerPage .relative.z-30{margin-top:-42px}
+  #providerPage h1,#profilePage h1{font-size:1.75rem}
+  .profile-photo{height:88px!important;width:88px!important}
+  .workspace-tab{min-height:38px;padding:8px 10px;font-size:10px}
+  .auth-trust{font-size:9px}
+  .modal-card{padding:20px!important}
+  .modal-card h2{font-size:1.6rem}
+  .chat-card{padding:0!important}
+  .chat-card form{padding:10px}
+  .chat-card form .flex{align-items:stretch}
+  .chat-card form button{padding-left:14px;padding-right:14px}
+}
+
 /* Final notification/read-state + sender-name contrast fix */
 .message-sender{margin-top:5px;font-size:10px;font-weight:800;letter-spacing:.01em;color:#285f50!important;opacity:1!important}
 html[data-theme="light"] .message-bubble:not(.mine) .message-sender{color:#075f49!important}
