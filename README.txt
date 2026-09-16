@@ -1,5 +1,13 @@
 CampusX - Light/Dark + Provider/Client + Hire + Messaging (Legacy Linking Fix)
 
+Live site: https://wolfbackcse.github.io/CampusX.web/
+
+SUPABASE AUTH REDIRECT
+----------------------
+In Supabase Dashboard > Authentication > URL Configuration, set:
+- Site URL: https://wolfbackcse.github.io/CampusX.web/
+- Redirect URL: https://wolfbackcse.github.io/CampusX.web/
+
 IMPORTANT DATABASE STEP
 1. Open Supabase Dashboard > SQL Editor > New query.
 2. Open supabase-profile-upgrade.sql from this package.
