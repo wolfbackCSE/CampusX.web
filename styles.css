@@ -7,27 +7,28 @@
 @media(max-width:699px){.menu-toggle{display:inline-flex!important;align-items:center;justify-content:center;gap:5px!important;min-width:44px!important;padding:7px 9px!important;color:var(--text)!important}.menu-icon{font-size:1.35rem;line-height:1}.menu-label{font-size:.68rem;font-weight:900}.nav-actions #themeToggle,.nav-actions #notificationWrap,.nav-actions #inboxBtn,.nav-actions #login,.nav-actions #signup,.nav-actions #profileBtn,.nav-actions #logout{display:none!important}.mobile-menu{top:calc(62px + env(safe-area-inset-top))}.profile-avatar{width:96px;height:96px}}
 #inboxCount{display:none!important}
 @media(max-width:699px){
-  .chat-card{width:100vw!important;height:100dvh!important;max-height:100dvh!important;border-radius:0!important}
-  .chat-layout{display:flex;min-height:100%;height:100%;flex-direction:column}
+  #chatModal{padding:0}
+  .chat-card{display:block;width:100vw!important;height:100svh!important;min-height:100svh!important;max-height:none!important;border-radius:0!important;overflow:hidden!important}
+  .chat-layout{display:flex;min-height:100%;height:100%;flex-direction:column;overflow:hidden}
   .thread-pane{display:none;max-height:none;height:100%;border:0;padding:16px}
   .chat-card.show-threads .thread-pane{display:block}
   .chat-card.show-threads .chat-pane{display:none}
   .chat-card.show-threads .thread-pane{padding:0;background:var(--surface)}
   .chat-card.show-threads .inbox-head{padding:22px 18px 14px}
   .chat-card.show-threads .inbox-tabs{margin:0 14px 8px}
-  .chat-card.show-threads #threadList{overflow:auto;height:calc(100dvh - 148px)}
+  .chat-card.show-threads #threadList{overflow:auto;height:calc(100svh - 148px);-webkit-overflow-scrolling:touch}
   .chat-card.show-threads .thread-item{min-height:82px;padding:13px 18px}
   .chat-card.show-threads .thread-avatar{width:52px;height:52px}
   .chat-card:not(.show-threads) .chat-header{padding:10px 12px!important}
   .chat-card:not(.show-threads) .chat-header>div{font-size:1rem}
   .chat-card:not(.show-threads) .chat-profile-button{display:inline-flex}
-  .chat-pane{height:100%;min-height:0}
+  .chat-pane{height:100%;min-height:0;overflow:hidden}
   .chat-header{min-height:62px!important;padding:10px 12px!important}
   .chat-mobile-control{display:inline-flex;align-items:center;justify-content:center}
   .chat-header>div{font-size:.9rem}
   .chat-header-close{display:inline-flex}
   .page-close{right:10px;top:10px}
-  .message-list{padding:18px 12px}
+  .message-list{min-height:0;padding:18px 12px;-webkit-overflow-scrolling:touch}
   .message-bubble{max-width:88%;font-size:.9rem}
   .message-form{padding-bottom:calc(12px + env(safe-area-inset-bottom))}
 }
