@@ -32,6 +32,14 @@ supabase-profile-upgrade.sql. It creates the public `profile-files` bucket
 and the authenticated upload/public-read policies required by the app.
 No additional SQL is needed for the mobile menu or browser navigation.
 
+NOTIFICATIONS AND FEEDBACK
+--------------------------
+The notification bell shows unread messages plus hire updates. Hiring details
+remain in the inbox under Hiring Details, while completed clients can select
+Leave feedback there to open the rating form directly. The existing
+supabase-profile-upgrade.sql migration is required for hire rows and review
+permissions; no new SQL migration was added for this UI update.
+
 WHAT THIS VERSION FIXES
 - Old listings no longer block the Hire form just because provider_id is missing.
 - CampusX tries to resolve old providers from normalized name, profile email, Auth email, metadata name, and mobile/contact data.
