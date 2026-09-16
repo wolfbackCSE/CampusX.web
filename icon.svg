@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#075f49"/>
+  <rect x="76" y="76" width="360" height="360" rx="88" fill="#12b981"/>
+  <text x="256" y="317" text-anchor="middle" font-family="Arial,sans-serif" font-size="170" font-weight="900" fill="#fff">CX</text>
+</svg>
