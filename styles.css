@@ -164,6 +164,50 @@ html[data-theme="dark"] .auth-intro{background:linear-gradient(155deg,#0d2d22,#0
   .chat-card form button{padding-left:14px;padding-right:14px}
 }
 
+@media(max-width:640px){
+  body.auth-required{overflow:hidden}
+  body.auth-required #authModal{overflow:hidden}
+  .auth-gate-grid{
+    display:block;
+    height:100dvh;
+    min-height:100dvh;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .auth-intro{
+    min-height:0;
+    padding:16px 18px 20px;
+  }
+  .auth-copy{
+    margin-top:24px;
+  }
+  .auth-copy h1{
+    font-size:clamp(32px,9vw,42px);
+  }
+  .auth-copy p{
+    margin-top:10px;
+    font-size:13px;
+    line-height:1.55;
+  }
+  .auth-steps-wrap{
+    display:none;
+  }
+  .auth-form-side{
+    min-height:0;
+    padding:22px 18px 34px;
+  }
+  .auth-form-side .mt-7{
+    margin-top:22px;
+  }
+  .auth-form-side .mt-6{
+    margin-top:18px;
+  }
+  .auth-trust{
+    margin-top:20px;
+    padding-top:16px;
+  }
+}
+
 /* Final notification/read-state + sender-name contrast fix */
 .message-sender{margin-top:5px;font-size:10px;font-weight:800;letter-spacing:.01em;color:#285f50!important;opacity:1!important}
 html[data-theme="light"] .message-bubble:not(.mine) .message-sender{color:#075f49!important}
