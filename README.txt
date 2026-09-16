@@ -14,6 +14,17 @@ IMPORTANT DATABASE STEP
 3. Copy the ENTIRE file into Supabase and click Run.
 4. Refresh the deployed CampusX site and sign in again.
 
+HIRE AND REVIEW FLOW
+--------------------
+1. A client opens a provider profile and sends a hire request.
+2. The request appears for both participants under Messages > Ongoing work.
+3. The provider selects Accept, then Mark work complete when finished.
+4. The client opens the completed request and selects Leave feedback.
+5. The client submits a star rating and written feedback on the provider profile.
+
+If hire requests or reviews are missing, run the full
+supabase-profile-upgrade.sql migration above, then sign out and sign in again.
+
 WHAT THIS VERSION FIXES
 - Old listings no longer block the Hire form just because provider_id is missing.
 - CampusX tries to resolve old providers from normalized name, profile email, Auth email, metadata name, and mobile/contact data.
