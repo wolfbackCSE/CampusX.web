@@ -16,6 +16,8 @@
   .chat-header{min-height:62px!important;padding:10px 12px!important}
   .chat-mobile-control{display:inline-flex;align-items:center;justify-content:center}
   .chat-header>div{font-size:.9rem}
+  .chat-header-close{display:inline-flex}
+  .page-close{right:10px;top:10px}
   .message-list{padding:18px 12px}
   .message-bubble{max-width:88%;font-size:.9rem}
   .message-form{padding-bottom:calc(12px + env(safe-area-inset-bottom))}
@@ -31,6 +33,21 @@
 .empty-state{padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:13px}
 .chat-header{display:flex;align-items:center;gap:10px;padding:14px 18px!important;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--surface)),var(--surface));border-bottom:1px solid var(--line)}
 .chat-header>div{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inbox-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-bottom:12px}
+.inbox-head h2{margin:5px 0 0;font-size:1.8rem;line-height:1.05}
+.inbox-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:12px;padding:4px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2)}
+.inbox-tab{min-height:40px;border:0;border-radius:9px;background:transparent;color:var(--muted);font-size:.76rem;font-weight:900}
+.inbox-tab.active{background:var(--surface);color:var(--accent)}
+.chat-header-close{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:0;border-radius:10px;background:transparent;color:var(--muted);font-size:1.7rem;line-height:1}
+.page{position:relative}
+.page-close{position:absolute;right:16px;top:18px;z-index:2;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--muted);font-size:1.6rem;line-height:1}
+.skill-card{position:relative;overflow:hidden;padding:20px;border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line));border-radius:24px;background:linear-gradient(155deg,var(--surface),color-mix(in srgb,var(--accent) 7%,var(--surface)));box-shadow:0 14px 35px rgba(47,28,99,.12)}
+.skill-card:before{content:"";position:absolute;right:-35px;top:-45px;width:130px;height:130px;border-radius:50%;background:color-mix(in srgb,var(--accent) 20%,transparent);filter:blur(2px)}
+.skill-card h3{position:relative;font-size:1.25rem}
+.skill-card p{position:relative;min-height:66px}
+.skill-card .contact{position:relative;width:100%;min-height:44px;margin-top:16px;border:1px solid color-mix(in srgb,var(--accent) 28%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--accent) 12%,var(--surface));color:var(--text);font-weight:900}
+#reviewModal{z-index:90}
+#authModal{z-index:100}
 .chat-mobile-control{display:none;min-height:38px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);padding:7px 10px;color:var(--text);font-size:.75rem;font-weight:900}
 .message-list{background:radial-gradient(circle at 85% 10%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 30%),var(--bg)}
 .message-bubble{max-width:min(78%,560px);padding:13px 15px;border-radius:18px 18px 18px 5px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
