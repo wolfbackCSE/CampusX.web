@@ -25,6 +25,13 @@ HIRE AND REVIEW FLOW
 If hire requests or reviews are missing, run the full
 supabase-profile-upgrade.sql migration above, then sign out and sign in again.
 
+PROFILE PHOTO STORAGE
+---------------------
+If uploaded profile photos do not appear, run the storage section in
+supabase-profile-upgrade.sql. It creates the public `profile-files` bucket
+and the authenticated upload/public-read policies required by the app.
+No additional SQL is needed for the mobile menu or browser navigation.
+
 WHAT THIS VERSION FIXES
 - Old listings no longer block the Hire form just because provider_id is missing.
 - CampusX tries to resolve old providers from normalized name, profile email, Auth email, metadata name, and mobile/contact data.
