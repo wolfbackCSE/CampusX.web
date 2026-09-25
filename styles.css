@@ -31,6 +31,21 @@
   .message-list{min-height:0;padding:18px 12px;-webkit-overflow-scrolling:touch}
   .message-bubble{max-width:88%;font-size:.9rem}
   .message-form{padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+  .profile-dashboard{display:block;min-height:0;border-radius:20px}
+  .profile-sidebar{padding:22px 16px;border-right:0;border-bottom:1px solid var(--line)}
+  .profile-nav{grid-template-columns:repeat(2,1fr);margin-top:20px}
+  .profile-nav-item{justify-content:center;min-height:44px;padding:8px;font-size:.75rem}
+  .profile-nav-item span{white-space:nowrap}
+  .profile-nav-item.danger{margin-top:0}
+  .profile-main{padding:20px 14px 28px}
+  .profile-main-head{display:block}
+  .profile-main-head .button{width:100%;margin-top:14px}
+  .profile-overview,.profile-workspace{grid-template-columns:1fr}
+  .profile-contact-grid{grid-template-columns:1fr 1fr}
+  .profile-workspace .panel{padding:16px}
+  #messageForm:not(.hidden){position:relative;z-index:3;flex:none;display:flex!important;min-height:64px}
+  #messageInput{min-width:0;flex:1}
+  .message-form .button{flex:none;padding-inline:13px}
 }
 /* Hire requests are also visible in the shared inbox as ongoing work. */
 .inbox-section-label{margin:16px 0 8px;font-size:10px;font-weight:900;letter-spacing:.16em;color:var(--accent);text-transform:uppercase}
@@ -80,6 +95,33 @@
 .delete-message-btn{border:0;border-radius:7px;background:rgba(255,255,255,.16);padding:3px 7px;color:inherit;font-size:.68rem;font-weight:800}
 .message-form{background:var(--surface);padding:12px 14px}
 .message-form .field{border-radius:15px}
+.profile-dashboard{display:grid;grid-template-columns:235px 1fr;min-height:680px;overflow:hidden;border:1px solid var(--line);border-radius:28px;background:var(--surface);box-shadow:var(--shadow)}
+.profile-sidebar{padding:22px 14px;border-right:1px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 8%,var(--surface)),var(--surface))}
+.profile-identity{text-align:center}
+.profile-avatar-wrap{position:relative;width:112px;margin:0 auto 12px}
+.profile-avatar-wrap .profile-avatar{width:112px;height:112px}
+.avatar-edit{position:absolute;right:0;bottom:5px;width:34px;height:34px;border:3px solid var(--surface);border-radius:50%;background:var(--accent);color:#fff;font-weight:900}
+.profile-identity h1{margin:0;font-size:1.2rem}
+.profile-identity p{margin:4px 0;color:var(--muted);font-size:.82rem}
+.profile-status{display:inline-block;margin-top:8px;color:#16a34a;font-size:.7rem;font-weight:900}
+.profile-nav{display:grid;gap:6px;margin-top:28px}
+.profile-nav-item{display:flex;align-items:center;gap:10px;width:100%;min-height:46px;padding:10px 12px;border:0;border-radius:12px;background:transparent;color:var(--muted);font-weight:800;text-align:left}
+.profile-nav-item.active,.profile-nav-item:hover{background:color-mix(in srgb,var(--accent) 13%,transparent);color:var(--text)}
+.profile-nav-item.danger{margin-top:12px;color:var(--danger)}
+.profile-main{min-width:0;padding:34px}
+.profile-main-head{display:flex;align-items:start;justify-content:space-between;gap:18px}
+.profile-main-head h2{margin:6px 0;font-size:clamp(1.7rem,4vw,2.5rem);text-transform:capitalize}
+.profile-main-head p{margin:0;color:var(--muted)}
+.profile-overview{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(190px,1fr);gap:14px;margin:28px 0 18px}
+.profile-info-card{padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--surface-2)}
+.profile-info-card h3{margin:4px 0;font-size:1.25rem}
+.verified-pill{padding:6px 9px;border-radius:99px;background:rgba(34,197,94,.12);color:#16a34a;font-size:.7rem;font-weight:900}
+.profile-contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:18px}
+.profile-contact-grid span,.profile-links-card span{display:block;color:var(--muted);font-size:.72rem}
+.profile-contact-grid b,.profile-links-card b{display:block;margin-top:3px;overflow-wrap:anywhere;font-size:.86rem}
+.profile-links-card{display:grid;align-content:start;gap:15px}
+.profile-workspace{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#messageForm:not(.hidden){display:flex!important}
 .menu-toggle{display:none;min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);font-size:1.3rem}
 .mobile-menu{position:fixed;right:12px;top:68px;z-index:45;width:min(240px,calc(100vw - 24px));padding:8px;border:1px solid var(--line);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)}
 .mobile-menu button{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:10px 12px;border:0;border-radius:10px;background:transparent;color:var(--text);font-weight:800;text-align:left}
