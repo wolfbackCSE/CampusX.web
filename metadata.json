@@ -1,0 +1,8 @@
+{
+  "name": "CampusX | Student Skill Exchange",
+  "description": "Student-to-student marketplace to discover talent, publish skills, hire, message, and review.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

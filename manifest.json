@@ -1,8 +1,8 @@
 {
   "name": "CampusX | Student Skill Exchange",
   "short_name": "CampusX",
-  "start_url": "/CampusX.web/",
-  "scope": "/CampusX.web/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#f7fffb",
   "theme_color": "#075f49",
