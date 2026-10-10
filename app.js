@@ -609,11 +609,11 @@ async function loadListings() {
 // ==========================================================================
 function setAuthMode(signup) {
   state.signupMode = signup;
-  $("name").classList.toggle("hidden", !signup);
-  $("authTitle").textContent = signup ? "Create your student account" : "Welcome back";
-  $("authSubmit").textContent = signup ? "Sign up" : "Log in";
-  $("loginTab").classList.toggle("active", !signup);
-  $("signupTab").classList.toggle("active", signup);
+  if ($("name")) $("name").classList.toggle("hidden", !signup);
+  if ($("authTitle")) $("authTitle").textContent = signup ? "Create your student account" : "Welcome back";
+  if ($("authSubmit")) $("authSubmit").textContent = signup ? "Sign up" : "Log in";
+  if ($("loginTab")) $("loginTab").classList.toggle("active", !signup);
+  if ($("signupTab")) $("signupTab").classList.toggle("active", signup);
 }
 
 function updateUser(user) {
@@ -819,9 +819,11 @@ function setWorkspace(mode) {
 
 async function showProfile(mode = "provider") {
   if (!requireLogin("Log in to open your student profile & workspace.")) return;
-  $("feedPage").classList.add("hidden");
-  $("providerPage").classList.add("hidden");
-  $("profilePage").classList.remove("hidden");
+  $("feedPage")?.classList.add("hidden");
+  $("providerPage")?.classList.add("hidden");
+  $("profilePage")?.classList.remove("hidden");
+  $("findMode")?.classList.remove("active");
+  $("offerMode")?.classList.remove("active");
   
   // Sync bottom nav
   updateBottomNav("profile");
@@ -834,11 +836,11 @@ async function showProfile(mode = "provider") {
 }
 
 function showFeed() {
-  $("providerPage").classList.add("hidden");
-  $("profilePage").classList.add("hidden");
-  $("feedPage").classList.remove("hidden");
-  $("findMode").classList.add("active");
-  $("offerMode").classList.remove("active");
+  $("providerPage")?.classList.add("hidden");
+  $("profilePage")?.classList.add("hidden");
+  $("feedPage")?.classList.remove("hidden");
+  $("findMode")?.classList.add("active");
+  $("offerMode")?.classList.remove("active");
   
   // Sync bottom nav
   updateBottomNav("marketplace");
@@ -1735,18 +1737,22 @@ if ($("themeToggle")) $("themeToggle").onclick = () => applyTheme(document.docum
 if ($("authThemeToggle")) $("authThemeToggle").onclick = () => applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
 
 // Navigation & Auth Triggers
-$("login").onclick = () => {
-  setAuthMode(false);
-  $("authMsg").textContent = "";
-  openModal("authModal");
-};
-$("signup").onclick = () => {
-  setAuthMode(true);
-  $("authMsg").textContent = "";
-  openModal("authModal");
-};
-$("loginTab").onclick = () => setAuthMode(false);
-$("signupTab").onclick = () => setAuthMode(true);
+if ($("login")) {
+  $("login").onclick = () => {
+    setAuthMode(false);
+    if ($("authMsg")) $("authMsg").textContent = "";
+    openModal("authModal");
+  };
+}
+if ($("signup")) {
+  $("signup").onclick = () => {
+    setAuthMode(true);
+    if ($("authMsg")) $("authMsg").textContent = "";
+    openModal("authModal");
+  };
+}
+if ($("loginTab")) $("loginTab").onclick = () => setAuthMode(false);
+if ($("signupTab")) $("signupTab").onclick = () => setAuthMode(true);
 
 // 1-Click Demo Guest Login Trigger
 if ($("demoLoginBtn")) {
@@ -1762,15 +1768,16 @@ if ($("demoLoginBtn")) {
   };
 }
 
-$("authForm").onsubmit = async e => {
+if ($("authForm")) {
+  $("authForm").onsubmit = async e => {
   e.preventDefault();
-  $("authMsg").textContent = "";
+  if ($("authMsg")) $("authMsg").textContent = "";
   
   if (!sb) {
     const fake = {
       id: "demo-user",
       email: $("email").value,
-      user_metadata: { full_name: $("name").value || "Student User" }
+      user_metadata: { full_name: $("name")?.value || "Student User" }
     };
     updateUser(fake);
     closeModal("authModal");
@@ -1783,7 +1790,7 @@ $("authForm").onsubmit = async e => {
         email: $("email").value,
         password: $("password").value,
         options: {
-          data: { full_name: $("name").value.trim() },
+          data: { full_name: $("name")?.value.trim() },
           emailRedirectTo: window.location.origin
         }
       })
@@ -1793,12 +1800,12 @@ $("authForm").onsubmit = async e => {
       });
 
   if (result.error) {
-    $("authMsg").textContent = result.error.message;
+    if ($("authMsg")) $("authMsg").textContent = result.error.message;
     return;
   }
 
   if (state.signupMode && !result.data.session) {
-    $("authMsg").textContent = "Account created. Please verify your email, then log in.";
+    if ($("authMsg")) $("authMsg").textContent = "Account created. Please verify your email, then log in.";
     return;
   }
 
@@ -1806,13 +1813,16 @@ $("authForm").onsubmit = async e => {
   closeModal("authModal");
   await loadProfile();
 };
+}
 
-$("logout").onclick = async () => {
-  if (sb) await sb.auth.signOut();
-  updateUser(null);
-  showFeed();
-  showToast("Logged out successfully.", "info");
-};
+if ($("logout")) {
+  $("logout").onclick = async () => {
+    if (sb) await sb.auth.signOut();
+    updateUser(null);
+    showFeed();
+    showToast("Logged out successfully.", "info");
+  };
+}
 
 ["post", "postTop", "profilePostBtn"].forEach(id => {
   if ($(id)) $(id).onclick = openListing;
